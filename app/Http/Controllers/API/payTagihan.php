@@ -17,8 +17,8 @@ class payTagihan extends Controller
          //get data mitra
          $mitra = Mitra::where([
                ['email','=', $request->header('email')],
-               ['token','=',$request->header('token')],
-               ['server','=',$_SERVER['REMOTE_ADDR']],
+               ['token','=',$request->header('api-key')],
+               // ['server','=',$_SERVER['REMOTE_ADDR']],s
                ['status','=','2'],
           ])->first(); //return model or null
 
